@@ -1,0 +1,52 @@
+<h1 style="color: white; background-color: blue; display: inline;">Guess the Number</h1>
+<p>Guessing the correct random number from 1 to 10</p>
+   <h2>Steps</h2
+<p> step 1 > Enter a integer fron 1 to 10 in the input box and click the "check button"<br>
+    step 2>If the result is wrong , again enter a new number on the input box and check it<br>
+    step 3 >Do it repeatedly until you win the game.
+</p>
+<h2>Note</h2>
+<p>1.If the result is wrong , your score will decreased by -1 from the totalscore<br>
+   2.If the result is right,t  he pop message " You won the game" float on the screen
+</p>
+<br>
+<input id="urnum" style="margin-top: 29px;" placeholder="Enter a number">
+<button onclick="nummatch()">Check</button>
+<h3 id="result">You are right/wrong</h3>
+<h2 id="cscore" style="background-color: greenyellow; display: inline;"> Your score is 10</h2>
+
+<script>
+//selecting html tags 
+    var urnum=document.getElementById("urnum")
+    var result=document.getElementById("result")
+    var cscore=document.getElementById("cscore")
+
+
+    var randomnumber=Math.floor(Math.random()*10)+1
+
+    var  totalscore=10
+    
+
+    function nummatch()
+     {
+        var enterednumber=urnum.value
+        
+        if(enterednumber==randomnumber)
+        
+    {
+        
+        console.log("Right")
+        result.textContent="Right"
+        alert("You won the game")
+    }
+       else
+    {
+      
+        console.log("Wrong")
+       result.textContent="Wrong"
+       totalscore=totalscore-1
+      cscore.textContent=" Your score is:" +totalscore
+      
+    }
+}
+ </script>
